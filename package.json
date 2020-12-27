@@ -1,0 +1,49 @@
+{
+  "name": "sudoku-resolver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/html-webpack-plugin": "^3.2.4",
+    "@types/jest": "^26.0.18",
+    "babel-jest": "^26.6.3",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.11",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "webpack --config config/webpack.config.js",
+    "serve": "webpack serve --config config/webpack.config.js",
+    "test": "jest --config ./config/jest.config.ts"
+  },
+  "dependencies": {
+    "@material/mwc-button": "^0.20.0",
+    "@material/mwc-checkbox": "^0.20.0",
+    "@material/mwc-dialog": "^0.20.0",
+    "@material/mwc-icon": "^0.20.0",
+    "@material/mwc-icon-button": "^0.20.0",
+    "@material/mwc-list": "^0.20.0",
+    "@material/mwc-slider": "^0.20.0",
+    "@material/mwc-textfield": "^0.20.0",
+    "@material/mwc-top-app-bar": "^0.20.0",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "rxjs": "^6.6.3"
+  }
+}

@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: $font-size;
+    font-family: $font-family;
+    background: $background-color;
+    color: $font-color;
+    max-width: $page-width;
+    line-height: 1.4;
+}
+
+:root {
+    // TODO REMOVE
+    --square-size: 40px;
+    --mdc-theme-primary: #23120b;
+}
+
+// https://colorhunt.co/palette/226633
+
+main {
+    // background-color: darkslateblue;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px calc(90vw - 300px);
+    grid-template-rows: 200px calc(90vh - 200px);
+    padding-top: 20px;
+}
+
+@media all and (min-width: 500px) {
+    .actions {
+        flex-flow: wrap;
+    }
+}
+
+.simulation {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+
+    & .controls {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & canvas {
+        max-height: calc(90vh - 200px);
+        max-width: calc(90vw - 300px);
+        height: 90%;
+        width: 100%;
+    }
+}
+
+.card__content.data {
+    display: flex;
+    flex-flow: column;
+
+    & mwc-button {
+        margin: 10px;
+    }
+}
+
+.settings-dialog__option {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    & > mwc-textfield {
+        width: 100%;
+    }
+}
+
+.algorithms > .card__content {
+    overflow-y: auto;
+    height: 100%;
+
+    & .algorithm__result {
+        border: 1px #eee solid;
+        padding: 10px;
+
+        & > h3 {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        &__content {
+            display: flex;
+            flex-flow: wrap;
+            flex-flow: column;
+            height: 70px;
+            justify-content: space-between;
+        }
+    }
+}

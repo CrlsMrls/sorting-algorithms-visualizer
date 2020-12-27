@@ -1,0 +1,29 @@
+.card {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+        0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    background-color: white;
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    margin: 10px;
+
+    display: flex;
+    flex-flow: column;
+
+    &__header {
+        padding-bottom: 10px;
+        font-weight: 700;
+    }
+
+    &__content {
+    }
+}
+
+mwc-button {
+    --mdc-theme-primary: #21209c;
+}
+
+mwc-slider {
+    --mdc-theme-secondary: #21209c;
+}

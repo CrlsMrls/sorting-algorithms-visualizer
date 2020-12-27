@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sort analysis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons&display=block"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header>
+            <mwc-top-app-bar centerTitle>
+                <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+                <div slot="title">Sorting algorithms</div>
+                <mwc-icon-button icon="favorite" slot="actionItems"></mwc-icon-button>
+            </mwc-top-app-bar>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2 class="card__header">Array</h2>
+                <div class="card__content data">
+                    <mwc-button
+                        id="settings"
+                        label="Settings"
+                        icon="settings"
+                        outlined
+                    ></mwc-button>
+                    <mwc-button
+                        id="new-array"
+                        label="New Array"
+                        icon="addchart"
+                        unelevated
+                    ></mwc-button>
+                </div>
+            </div>
+
+            <div class="card simulation">
+                <h2 class="card__header">Simulation <span id="simulation_name"></span></h2>
+                <div class="card__content">
+                    <div class="controls">
+                        <div>
+                            <mwc-slider
+                                id="slider"
+                                step="50"
+                                markers
+                                max="1000"
+                                min="1"
+                                value="500"
+                            >
+                            </mwc-slider>
+                            <mwc-icon-button
+                                id="fast_rewind"
+                                icon="fast_rewind"
+                                label="Fast rewind"
+                            ></mwc-icon-button>
+                            <mwc-icon-button
+                                id="skip_previous"
+                                icon="skip_previous"
+                                label="Previous"
+                            ></mwc-icon-button>
+                            <mwc-icon-button
+                                id="play_pause"
+                                icon="play_arrow"
+                                label="Play"
+                            ></mwc-icon-button>
+                            <mwc-icon-button
+                                id="skip_next"
+                                icon="skip_next"
+                                label="Next"
+                            ></mwc-icon-button>
+                            <mwc-icon-button
+                                id="fast_forward"
+                                icon="fast_forward"
+                                label="Fast forward"
+                            ></mwc-icon-button>
+                        </div>
+                        <div id="steps"></div>
+                    </div>
+                    <canvas id="graph"></canvas>
+                </div>
+            </div>
+
+            <div class="card algorithms">
+                <h2 class="card__header">Algorithms</h2>
+                <div class="card__content">
+                    <ul id="algorithms-results"></ul>
+                </div>
+            </div>
+        </main>
+        <mwc-dialog id="info-dialog">
+            <div class="info-dialog__text"></div>
+            <mwc-button slot="primaryAction" dialogAction="discard"> OK </mwc-button>
+        </mwc-dialog>
+        <mwc-dialog id="settings-dialog" heading="Settings">
+            <div class="settings-dialog__option">
+                <mwc-textfield
+                    label="Array size (10 - 1000)"
+                    type="number"
+                    min="10"
+                    max="1000"
+                    required
+                ></mwc-textfield>
+            </div>
+            <div class="settings-dialog__option">
+                <mwc-checkbox id="settings-dialog__option-shuffle"></mwc-checkbox>
+                <label for="settings-dialog__option-shuffle"> Shuffle array at beginning </label>
+            </div>
+            <div class="settings-dialog__option">
+                <mwc-checkbox id="settings-dialog__option-reads"></mwc-checkbox>
+                <label for="settings-dialog__option-reads"> Show reads in simulation </label>
+            </div>
+            <mwc-button id="settings-dialog__confirm-button" slot="primaryAction">
+                Confirm
+            </mwc-button>
+            <mwc-button slot="secondaryAction" dialogAction="close"> Cancel </mwc-button>
+        </mwc-dialog>
+    </body>
+</html>
