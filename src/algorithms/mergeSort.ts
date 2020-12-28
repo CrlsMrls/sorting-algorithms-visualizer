@@ -62,6 +62,20 @@ function mergeSortImplementation(array: TrackableArray): void {
 
 export const mergeSort: SortAlgorithm = {
     name: 'Merge Sort',
-    description: `some description <a href="">link</a>`,
+    description: `
+    <P>
+    Merge sort is a stable O(n log n) sorting algorithm. 
+    </P>
+    <P>
+    Merge Sort divides the array into two sublits, until there is one single element, the base case that represents a sorted array of one element.
+    Then it merges these sublists to produce new sorted sublists until the whole list is sorted.
+    </P>
+    <P>
+    Merge sort is ideal for linked lists, for parallelization, in distributed systems and when the data to be sorted is too large to fit into memory. 
+    </P>
+    <P>
+    As drawbacks, merge sort needs auxiliary space O(n), although there are in-place variants (e.g <a target="wikipedia" href="https://en.wikipedia.org/wiki/Block_sort">Block sort</a>).
+    </P>
+    <a target="wikipedia" href="https://en.wikipedia.org/wiki/Merge_sort">Wikipedia link to merge sort</a>`,
     sort: mergeSortImplementation,
 };

@@ -74,6 +74,10 @@ main {
     }
 }
 
+.info-dialog__text > p {
+    margin: 10px;
+}
+
 .algorithms > .card__content {
     overflow-y: auto;
     height: 100%;

@@ -54,6 +54,14 @@ function quickSortImplementation(array: TrackableArray): void {
 
 export const quickSortMedianPivot: SortAlgorithm = {
     name: 'Quick Sort - Median pivot',
-    description: `some description <a href="">link</a>`,
+    description: `
+    <P>
+    Quick sort is one of the most used sorting algorithms. Please refer to quick sort explanation.
+    </P>
+    <P>
+    This implementation modifies the pivot selection to prevent O(n<sub>2</sub>) worst case scenarios in already sorted lists.
+    For each iteration, the "median pivot" implementation selects the middle value of three elements (the left most, the middle and the right most element).
+    </P>    
+    <a target="wikipedia" href="https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot">Wikipedia link to Quick Sort</a>`,
     sort: quickSortImplementation,
 };

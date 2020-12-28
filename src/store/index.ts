@@ -36,7 +36,7 @@ const startSimulation = (store: any) => (next: any) => (action: ActionTypes) => 
     function play(): void {
         const appState: AppState = store.getState();
         if (appState.ui.isSimulationPlaying) {
-            store.dispatch({ type: GOTO_SIMULATION_STEP, payload: 1 });
+            next({ type: GOTO_SIMULATION_STEP, payload: 1 });
             prevTimeout = setTimeout(play, appState.data.speed);
         }
     }
