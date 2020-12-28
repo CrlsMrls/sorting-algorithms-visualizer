@@ -12,7 +12,8 @@ import {
     CLOSE_SETTINGS_DIALOG,
     CONFIRM_SETTINGS_DIALOG,
 } from './types';
-import { createIncrementalArray, shuffleArray, initialState, cloneAppState } from './utils';
+import { initialState, cloneAppState } from './utils';
+import { createIncrementalArray, shuffleArray } from '../utils';
 
 import { algorithms, SortAlgorithm } from '../algorithms';
 import { TrackableArray } from '../simulations/trackableArray';

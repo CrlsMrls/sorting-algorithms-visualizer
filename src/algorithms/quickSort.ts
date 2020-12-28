@@ -1,5 +1,5 @@
 import { TrackableArray } from '../simulations/trackableArray';
-import { SortAlgorithm } from './types';
+import { SortAlgorithm } from './';
 
 function quicksort(array: TrackableArray, start: number, end: number): void {
     array.trackRecursiveCall();

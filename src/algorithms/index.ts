@@ -1,8 +1,12 @@
-import { SortAlgorithm } from './types';
+import { TrackableArray } from '../simulations/trackableArray';
 
 import { mergeSort } from './mergeSort';
 import { quickSort } from './quickSort';
 import { quickSortMedianPivot } from './quickSortMedianPivot';
 
 export const algorithms: SortAlgorithm[] = [mergeSort, quickSort, quickSortMedianPivot];
-export * from './types';
+export interface SortAlgorithm {
+    name: string;
+    description?: string;
+    sort(array: TrackableArray): void;
+}
