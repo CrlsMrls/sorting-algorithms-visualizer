@@ -100,7 +100,8 @@ export function rootReducer(state: AppState = initialState, action: ActionTypes)
 
             const simulation: Simulation = new Simulation(
                 clonedState.data.array,
-                selectedAlgorithm.name
+                selectedAlgorithm.name,
+                clonedState.settings.includeReadsSteps
             );
             selectedAlgorithm.sort(simulation);
             simulation.addLastStep();

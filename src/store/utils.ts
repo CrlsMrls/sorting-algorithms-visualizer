@@ -15,7 +15,7 @@ export const initialState: AppState = {
     },
     settings: {
         size: 50,
-        includeReadsSteps: false,
+        includeReadsSteps: true,
         shuffleAtCreation: true,
     },
     data: {

@@ -11,10 +11,12 @@ export interface SimulationStep {
 export class Simulation extends TrackableArray {
     public steps: SimulationStep[];
     public name: string;
+    private includeReadsSteps;
 
-    constructor(array: number[], name: string) {
+    constructor(array: number[], name: string, reads: boolean) {
         super(array);
         this.name = name;
+        this.includeReadsSteps = reads;
         this.steps = [
             // initial step is before any change
             {
@@ -33,13 +35,15 @@ export class Simulation extends TrackableArray {
     }
 
     get(pos: number): number {
-        this.steps.push({
-            array: super.cloneArray(),
-            reads: [pos],
-            writes: [],
-            start: this.prevStart(),
-            end: this.prevEnd(),
-        });
+        if (this.includeReadsSteps) {
+            this.steps.push({
+                array: super.cloneArray(),
+                reads: [pos],
+                writes: [],
+                start: this.prevStart(),
+                end: this.prevEnd(),
+            });
+        }
 
         return super.get(pos);
     }
@@ -57,13 +61,15 @@ export class Simulation extends TrackableArray {
     }
 
     isFirstGreater(pos1: number, pos2: number): boolean {
-        this.steps.push({
-            array: super.cloneArray(),
-            reads: [pos1, pos2],
-            writes: [],
-            start: this.prevStart(),
-            end: this.prevEnd(),
-        });
+        if (this.includeReadsSteps) {
+            this.steps.push({
+                array: super.cloneArray(),
+                reads: [pos1, pos2],
+                writes: [],
+                start: this.prevStart(),
+                end: this.prevEnd(),
+            });
+        }
 
         return super.isFirstGreater(pos1, pos2);
     }
